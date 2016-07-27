@@ -1,0 +1,273 @@
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Form Name</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="email"></label>  
+  <div class="col-md-4">
+    <input id="firstName" name="email" ng-model="user.email" type="text" placeholder="Email" class="form-control input-md" required>
+  </div>  
+  <div class="col-md-4">
+    <button id="singlebutton" ng-click="retrieveDetails()" name="singlebutton" class="btn btn-primary">Retrieve</button>
+  </div>      
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="title">Title</label>
+  <div class="col-md-4">
+    <select id="title" name="title" class="form-control">
+      <option value="Mr.">Mr.</option>
+      <option value="Ms.">Ms.</option>
+      <option value="Mrs.">Mrs.</option>
+      <option value="Dr.">Dr.</option>
+    </select>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="firstName"></label>  
+  <div class="col-md-5">
+  <input id="firstName" name="firstName" ng-model="user.firstName" type="text" placeholder="First Name" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="lastName"></label>  
+  <div class="col-md-5">
+  <input id="lastName" name="lastName" type="text" ng-model="user.lastName" placeholder="Last Name" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="dob"></label>  
+  <div class="col-md-4">
+    <input id="dob" name="dob" type="text" ng-blur="calculateAge()" ng-model="user.dob" placeholder="MM/DD/YYYY" class="form-control input-md" required>
+    <span class="help-block">&nbsp;&nbsp;Date of Birth</span>
+  </div>
+  <div class="col-md-4">
+    <input type="text" ng-model="user.ageString" placeholder="Age" class="form-control input-md" disabled>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="address1"></label>  
+  <div class="col-md-8">
+  <input id="address1" name="address1" ng-model="user.address1" type="text" placeholder="Address Line 1" class="form-control input-md" required>
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="address2"></label>  
+  <div class="col-md-8">
+  <input id="address2" name="address2" ng-model="user.address2" type="text" placeholder="Address Line 2" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="city"></label>  
+  <div class="col-md-4">
+  <input id="city" name="city" type="text" ng-model="user.city" placeholder="City" class="form-control input-md" required>
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="state"></label>  
+  <div class="col-md-4">
+  <input id="state" name="state" ng-model="user.state" type="text" placeholder="State" class="form-control input-md" required>
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="postalCode"></label>  
+  <div class="col-md-4">
+  <input id="postalCode" ng-model="user.postalCode" name="postalCode" type="text" placeholder="Post Code" class="form-control input-md" required>
+    
+  </div>
+</div>
+
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="radios">English Test</label>
+  <div class="col-md-4"> 
+    <label class="radio-inline" for="radios-0">
+      <input type="radio" ng-model="user.englishTest.name" name="radios" id="radios-0" value="ieltsg" checked="checked">
+      IELTS General
+    </label> 
+    <label class="radio-inline" for="radios-1">
+      <input type="radio" ng-model="user.englishTest.name" name="radios" id="radios-1" value="ieltsa">
+      IELTS Academic
+    </label> 
+    <label class="radio-inline" for="radios-2">
+      <input type="radio" ng-model="user.englishTest.name" name="radios" id="radios-2" value="pteg">
+      PTE General
+    </label> 
+    <label class="radio-inline" for="radios-3">
+      <input type="radio" ng-model="user.englishTest.name" name="radios" id="radios-3" value="ptea">
+      PTE Academic
+    </label>
+  </div>
+</div>
+
+<!-- Prepended text-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="prependedtext"></label>
+  <div class="col-md-4">
+    <div class="input-group">
+      <span class="input-group-addon">Listening</span>
+      <input id="prependedtext" ng-model="user.englishTest.listening" name="prependedtext" class="form-control" placeholder="" type="text" required>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Prepended text-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="prependedtext"></label>
+  <div class="col-md-4">
+    <div class="input-group">
+      <span class="input-group-addon">Speaking</span>
+      <input id="prependedtext" name="prependedtext" ng-model="user.englishTest.speaking" class="form-control" placeholder="" type="text" required>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Prepended text-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="prependedtext"></label>
+  <div class="col-md-4">
+    <div class="input-group">
+      <span class="input-group-addon">Writing  </span>
+      <input id="prependedtext" name="prependedtext" ng-model="user.englishTest.writing" class="form-control" placeholder="" type="text" required>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Prepended text-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="prependedtext"></label>
+  <div class="col-md-4">
+    <div class="input-group">
+      <span class="input-group-addon">Reading</span>
+      <input id="prependedtext" name="prependedtext" ng-model="user.englishTest.reading" class="form-control" placeholder="" type="text" required>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Professional Experience-->
+<div class="form-group">
+  <div ng-repeat="company in user.workex">
+    <div class="col-md-4">
+      <input ng-model="company.name" type="text" placeholder="Company" class="form-control input-md" required>
+    </div>
+    <div class="col-md-3">
+      <input ng-model="company.startDate" type="text" ng-blur="calculateExperience()" placeholder="MM/DD/YYYY" class="form-control input-md" required>
+      <span class="help-block">&nbsp;&nbsp;Start Date</span>
+    </div>
+    <div class="col-md-3">
+      <input ng-model="company.endDate" type="text" ng-blur="calculateExperience()" placeholder="MM/DD/YYYY" class="form-control input-md" required>
+      <span class="help-block">&nbsp;&nbsp;End Date</span>
+    </div>
+    <div class="col-md-2">
+      <label for="checkbox">
+        <input type="checkbox" name="checkbox" ng-blur="calculateExperience()" ng-model="company.local">
+        Australia
+      </label>
+    </div>
+    <div class="col-md-1" ng-click="addCompany()">
+      <span class="glyphicon glyphicon-plus"></span>
+    </div>
+    <div class="col-md-1" ng-click="removeCompany(index)">
+      <span class="glyphicon glyphicon-minus"></span>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-md-4">
+    <input type="text" ng-model="user.localExpString" placeholder="Australia Experience" class="form-control input-md" disabled>
+    <span class="help-block">&nbsp;&nbsp;Australia Experience</span>
+  </div>
+  <div class="col-md-4">
+    <input type="text" ng-model="user.overseasExpString" placeholder="Overseas Experience" class="form-control input-md" disabled>
+    <span class="help-block">&nbsp;&nbsp;Overseas Experience</span>
+  </div>
+</div>
+
+<!-- Education Details-->
+<div class="form-group">
+  <div ng-repeat="university in user.education">
+    <div class="col-md-4">
+      <input ng-model="university.name" type="text" placeholder="University" class="form-control input-md" required>
+    </div>
+    <div class="col-md-3">
+      <input ng-model="university.startDate" type="text" placeholder="MM/DD/YYYY" class="form-control input-md" required>
+      <span class="help-block">&nbsp;&nbsp;Start Date</span>
+    </div>
+    <div class="col-md-3">
+      <input ng-model="university.endDate" type="text" placeholder="MM/DD/YYYY" class="form-control input-md" required>
+      <span class="help-block">&nbsp;&nbsp;End Date</span>
+    </div>
+    <div class="col-md-2">
+      <label for="checkbox">
+        <input type="checkbox" name="checkbox" ng-blur="calculateExperience()" ng-model="company.local">
+        Australia
+      </label>
+    </div>
+    <div class="col-md-1" ng-click="addCompany()">
+      <span class="glyphicon glyphicon-plus"></span>
+    </div>
+    <div class="col-md-1" ng-click="removeCompany(index)">
+      <span class="glyphicon glyphicon-minus"></span>
+    </div>
+  </div>
+</div>
+
+
+  
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textarea"></label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="textarea" name="textarea">Notes</textarea>
+  </div>
+</div>
+
+<!-- Button (Double) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="button1id"></label>
+  <div class="col-md-8">
+    <button id="button1id" ng-click="saveDetails()" name="button1id" class="btn btn-success">Submit</button>
+    <button id="button2id" name="button2id" class="btn btn-danger">Clear</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
